@@ -1,0 +1,18 @@
+//shorturl.at/cpOX5
+
+public static List<Integer> matchingStrings(List<String> strings, List<String> queries) {
+    HashMap<String, Integer> hs = new HashMap<>();
+        for(String s: strings){
+            hs.put(s, hs.getOrDefault(s, 0)+1);
+        }
+        List<Integer> res = new ArrayList<>();
+        for(String s: queries){
+            if(hs.containsKey(s)){
+                res.add(hs.get(s));
+            }
+            else
+                res.add(0);
+        }
+        return res;
+
+    }

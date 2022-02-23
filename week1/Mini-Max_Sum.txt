@@ -1,0 +1,15 @@
+//shorturl.at/hksDM
+
+ public static void miniMaxSum(List<Integer> arr) {
+        Collections.sort(arr);
+        long minSum = 0;
+
+        for(int i=0; i<arr.size()-1; i++){
+            minSum += arr.get(i);
+        }
+
+        System.out.print(minSum+" ");
+        long maxSum = minSum+arr.get(arr.size()-1) - arr.get(0);
+        System.out.print(maxSum);
+
+    }
