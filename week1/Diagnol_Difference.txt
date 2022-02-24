@@ -1,0 +1,13 @@
+//shorturl.at/cnprA
+
+public static int diagonalDifference(List<List<Integer>> arr) {
+        int lrDiff = 0;
+        int rlDiff = 0;
+        int dr=0, dl=arr.size()-1;
+        for(int i=0; i<arr.size(); i++){
+            lrDiff += arr.get(i).get(dr++);
+            rlDiff += arr.get(i).get(dl--);
+        }
+        return Math.abs(lrDiff-rlDiff);
+
+    }

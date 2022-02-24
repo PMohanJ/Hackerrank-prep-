@@ -1,0 +1,17 @@
+//shorturl.at/jJLU5
+
+public static String pangrams(String s) {
+        Integer arr[] = new Integer[26];
+        Arrays.fill(arr,0);
+        s = s.toLowerCase();
+        
+        for(int i=0; i<s.length(); i++){
+            if(s.charAt(i) == ' ')
+                continue;
+            arr[s.charAt(i) - 'a']++;
+        }
+            
+        if(Collections.min(Arrays.asList(arr)) == 0)
+            return "not pangram";
+        return "pangram";
+    }

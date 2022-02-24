@@ -1,0 +1,9 @@
+//shorturl.at/jnC89
+
+public static long flippingBits(long n) {
+        long res=0;
+        //subtracting the number from long will return required ans
+        res = ((long)Math.pow(2, 32)-1) - n;
+        
+        return res;
+    }
