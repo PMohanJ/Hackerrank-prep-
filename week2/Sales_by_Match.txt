@@ -1,0 +1,20 @@
+//shorturl.at/kmMR8
+
+
+public static int sockMerchant(int n, List<Integer> ar) {
+        HashMap<Integer, Integer> hs = new HashMap<>();
+        int pairs = 0;
+        
+        for(int ele: ar)
+            hs.put(ele, hs.getOrDefault(ele, 0) +1);
+        
+        Set<Integer> keys = hs.keySet();
+        Iterator<Integer> itr = keys.iterator();
+        
+        while(itr.hasNext()){
+            int key = itr.next();
+            pairs += (hs.get(key)/2);
+        }
+        return pairs;
+
+    }

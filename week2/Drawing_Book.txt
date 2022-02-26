@@ -1,0 +1,10 @@
+//shorturl.at/coACM
+
+public static int pageCount(int n, int p) {
+        int total_turns = n/2;
+        int from_start = p/2;
+        int from_end = total_turns - from_start;
+        
+        return from_start > from_end ? from_end : from_start;
+
+    }
