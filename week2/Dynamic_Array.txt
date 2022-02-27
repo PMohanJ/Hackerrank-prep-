@@ -1,0 +1,27 @@
+//shorturl.at/diFZ7
+
+ public static List<Integer> dynamicArray(int n, List<List<Integer>> queries) {
+        List<List<Integer>> ls = new ArrayList<>(n);
+        List<Integer> res = new ArrayList<>();
+        int lastAnswer = 0;
+        
+        for(int i=0; i<n; i++){
+            ls.add(new ArrayList<Integer>());
+        }
+        
+        for(int i=0; i<queries.size(); i++){
+            if(queries.get(i).get(0) == 1){
+                int idx = (queries.get(i).get(1) ^ lastAnswer) % n;
+                ls.get(idx).add(queries.get(i).get(2));
+            }
+            
+            else if(queries.get(i).get(0) == 2){
+                int idx = (queries.get(i).get(1) ^ lastAnswer) % n;
+                int curr = queries.get(i).get(2) % ls.get(idx).size();
+                lastAnswer = ls.get(idx).get(curr);
+                res.add(lastAnswer);
+            }
+        }
+        return res;
+
+    }

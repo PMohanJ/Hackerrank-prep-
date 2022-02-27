@@ -1,0 +1,13 @@
+//shorturl.at/gikp8
+
+ public static int maxMin(int k, List<Integer> arr) {
+        Collections.sort(arr);
+        int min = Integer.MAX_VALUE;
+        for(int i=0; i<=arr.size()-k;i++){
+            int a = arr.get(i+(k-1))- arr.get(i);
+            if(min>a)
+                min = a;
+        }
+        
+        return min;
+    }
