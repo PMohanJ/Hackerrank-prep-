@@ -1,0 +1,19 @@
+//shorturl.at/nMRZ0
+
+public static String balancedSums(List<Integer> arr) {
+        if(arr.size() == 1)
+            return "YES";
+        int bSum = 0; //represents the sum of elements before curr ele; 
+        int afSum = 0; //represents the sum of elements after the curr ele;
+        
+        for(int i: arr)
+            afSum += i;
+        for(int i=0; i<arr.size(); i++){
+            afSum -= arr.get(i);
+            if(bSum == afSum)
+                return "YES";
+            else{
+                bSum += arr.get(i);
+            }
+        }
+        return "NO";

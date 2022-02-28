@@ -1,0 +1,14 @@
+//shorturl.at/mxIW6
+
+public static int superDigit(String n, int k) {
+        if(n.length() == 1 && k == 1) {
+            return Integer.parseInt(n);
+        }
+        long sum = 0;
+        for(char digit : n.toCharArray()) {
+            sum += Character.getNumericValue(digit);
+        }
+        sum *= k;
+        return superDigit(Long.toString(sum), 1);    
+
+    }
