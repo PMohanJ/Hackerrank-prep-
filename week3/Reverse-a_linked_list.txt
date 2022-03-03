@@ -1,0 +1,17 @@
+//shorturl.at/euNU9
+
+public static SinglyLinkedListNode reverse(SinglyLinkedListNode llist) {
+        if(llist == null)
+            return null;
+    
+        SinglyLinkedListNode previous = null;
+        SinglyLinkedListNode nextNode = null;
+        while(llist != null){
+            nextNode = llist.next;
+            llist.next = previous;
+            previous = llist;
+            llist = nextNode;
+        }
+        return previous;
+
+    }
