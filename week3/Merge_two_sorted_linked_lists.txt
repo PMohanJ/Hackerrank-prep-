@@ -1,0 +1,44 @@
+//shorturl.at/fzD34
+
+ static SinglyLinkedListNode mergeLists(SinglyLinkedListNode head1, SinglyLinkedListNode head2) {
+         SinglyLinkedListNode itr1 = head1;
+        SinglyLinkedListNode itr2 = head2;
+        
+        SinglyLinkedListNode newOne = null;
+        SinglyLinkedListNode prev = null;
+        
+        if(itr1.data <= itr2.data){
+            newOne = new SinglyLinkedListNode(itr1.data);
+            itr1 = itr1.next;
+            prev = newOne;
+        }
+        else{
+            newOne = new SinglyLinkedListNode(itr2.data);
+            itr2 = itr2.next;
+            prev = newOne;
+        }
+        
+        
+        while(itr1 != null && itr2 !=null){
+            if(itr1.data <= itr2.data){
+                SinglyLinkedListNode node = new SinglyLinkedListNode(itr1.data);
+                prev.next = node;
+                prev = node;
+                itr1 = itr1.next;
+            }
+            else{
+                SinglyLinkedListNode node = new SinglyLinkedListNode(itr2.data);
+                prev.next = node;
+                prev = node;
+                itr2 = itr2.next;
+                
+            }
+        }
+        
+        if(itr2 == null)
+            prev.next = itr1;
+        else
+            prev.next = itr2;
+        return newOne;
+
+    }
